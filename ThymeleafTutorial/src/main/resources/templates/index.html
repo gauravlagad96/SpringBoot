@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>index page</title>
+	
+	<link type="text/css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+	
+</head>
+
+<body>
+	<div th:replace = "~{header::myheader}"></div>
+
+	<h1> Welcome to Thymeleaf tutorial</h1>
+
+	<!--  <p data-th-text="#{first.name}"></p>   it's not work -->
+	<p data-th-text="#{first.name}"></p>
+
+	<p data-th-utext="#{first.name}"></p>
+
+	<h3>Today date is: [[${today}]]</h3>
+
+	<h4 data-th-text="${today}"></h4>
+	<hr>
+	<h4 data-th-text="${user1.id}"></h4>
+	<h4 data-th-text="${user1.name}"></h4>
+	<h4 data-th-text="${user1.address}"></h4>
+
+
+	<!-- ********* selection variable expression ************************************************************* -->
+	<div th:object="${user1}">
+		<h3>id:[[*{id}]]</h3>
+		<h3>Name:[[*{name}]]</h3>
+		<h3>Address:[[*{address}]]</h3>
+
+	</div>
+
+	<!-- ************** selection variable expression end **************************-->
+	<!-- ************** link expression  **************************-->
+	
+	<a th:href="@{profile}">profile</a>
+	<a th:href="@{'profile/'+${user1.id}}">profile_id</a>
+	
+	<!--	<div th:replace = "~{footer::myFooter}"></div>  -->
+
+
+</body>
+
+</html>

@@ -13,6 +13,7 @@ public class User {
 		private int id;
 		private String name;
 		private long mobile;
+		
 		public int getId() {
 			return id;
 		}
@@ -32,15 +33,14 @@ public class User {
 			this.mobile = mobile;
 		}
 		
-		
 		public User(int id, String name, long mobile) {
 			super();
 			this.id = id;
 			this.name = name;
 			this.mobile = mobile;
 		}
+		
 		public User() {
-			super();
 			// TODO Auto-generated constructor stub
 		}
 		
@@ -48,7 +48,5 @@ public class User {
 		public String toString() {
 			return "User [id=" + id + ", name=" + name + ", mobile=" + mobile + "]";
 		}
-		
-		
-		
+				
 }
